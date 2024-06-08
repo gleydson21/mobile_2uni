@@ -1,0 +1,18 @@
+- projeto
+  |- lib
+  |   |- components
+  |   |   |- grocery_item_tile.dart
+  |   |- model
+  |   |   |- cart_model.dart
+  |   |- images
+  |   |   |- avocado.png
+  |   |   |- banana.png
+  |   |   |- chicken.png
+  |   |   |- water.png
+  |   |- pages
+  |   |   |- intro_screen.dart
+  |   |   |- home_page.dart
+  |   |   |- cart_page.dart
+  |   |- main.dart
+  |   |
+  
