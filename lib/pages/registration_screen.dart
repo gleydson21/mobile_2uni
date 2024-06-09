@@ -1,12 +1,12 @@
-import 'package:ecommerce/authentication/authentication.dart';
-import 'package:flutter/material.dart';
+// // import 'package:ecommerce/authentication/authentication.dart';
+ import 'package:flutter/material.dart';
 
 class RegistrationScreen extends StatelessWidget {
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
 
-  final AuthenticationService _authenticationService = AuthenticationService();
+  // final AuthenticationService _authenticationService = AuthenticationService();
 
   RegistrationScreen({super.key});
 
@@ -110,8 +110,9 @@ class RegistrationScreen extends StatelessWidget {
       ),
     );
   }
+}
 
-  void _register(String name, String email, String password, BuildContext context) {
+  void _register(String name, String email, String password, BuildContext context){
     if (name.isEmpty || email.isEmpty || password.isEmpty) {
       showDialog(
         context: context,
@@ -129,11 +130,11 @@ class RegistrationScreen extends StatelessWidget {
         ),
       );
     } else {
-      _authenticationService.cadastrarUsuario(
-        name: name,
-        email: email,
-        password: password,
-      ).then((_) {
+      // _authenticationService.cadastrarUsuario(
+      //   name: name,
+      //   email: email,
+      //   password: password,
+      // ).then((_) {
         showDialog(
           context: context,
           builder: (context) => AlertDialog(
@@ -149,12 +150,12 @@ class RegistrationScreen extends StatelessWidget {
             ],
           ),
         );
-      }).catchError((error) {
+      // }).catchError((error) {
         showDialog(
           context: context,
           builder: (context) => AlertDialog(
             title: const Text('Erro'),
-            content: Text('Ocorreu um erro durante o cadastro: $error'),
+            // content: Text('Ocorreu um erro durante o cadastro: $error'),
             actions: [
               TextButton(
                 onPressed: () {
@@ -165,7 +166,7 @@ class RegistrationScreen extends StatelessWidget {
             ],
           ),
         );
-      });
+      // });
     }
   }
-}
+  

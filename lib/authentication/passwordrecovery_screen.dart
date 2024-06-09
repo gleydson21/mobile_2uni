@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+ import 'package:flutter/material.dart';
+// import 'package:firebase_auth/firebase_auth.dart';
 
 class PasswordRecoveryScreen extends StatefulWidget {
   const PasswordRecoveryScreen({super.key});
@@ -60,7 +60,7 @@ class _PasswordRecoveryScreenState extends State<PasswordRecoveryScreen> {
     });
 
     try {
-      await FirebaseAuth.instance.sendPasswordResetEmail(email: email);
+      // await FirebaseAuth.instance.sendPasswordResetEmail(email: email);
 
       // Email de recuperação enviado com sucesso
       showDialog(

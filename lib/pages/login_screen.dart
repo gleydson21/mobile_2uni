@@ -1,7 +1,7 @@
 import 'package:ecommerce/authentication/passwordrecovery_screen.dart';
 import 'package:ecommerce/pages/home_page.dart';
 import 'package:ecommerce/pages/registration_screen.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+// import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -156,11 +156,11 @@ class LoginScreen extends StatelessWidget {
         },
       );
     } else {
-      try {
-        await FirebaseAuth.instance.signInWithEmailAndPassword(
-          email: email,
-          password: password,
-        );
+      // try {
+      //   await FirebaseAuth.instance.signInWithEmailAndPassword(
+      //     email: email,
+      //     password: password,
+      //   );
 
         // Usuário logado com sucesso
         showDialog(
@@ -187,29 +187,29 @@ class LoginScreen extends StatelessWidget {
             );
           },
         );
-      } catch (error) {
-        // Ocorreu um erro durante o login
-        showDialog(
-          // ignore: use_build_context_synchronously
-          context: context,
-          builder: (context) {
-            return AlertDialog(
-              title: const Text('Erro'),
-              content: Text(
-                'Falha no login. Verifique os dados informados: $error',
-              ),
-              actions: [
-                TextButton(
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                  child: const Text('OK'),
-                ),
-              ],
-            );
-          },
-        );
-      }
+      // } catch (error) {
+      //   // Ocorreu um erro durante o login
+      //   showDialog(
+      //     // ignore: use_build_context_synchronously
+      //     context: context,
+      //     builder: (context) {
+      //       return AlertDialog(
+      //         title: const Text('Erro'),
+      //         content: Text(
+      //           'Falha no login. Verifique os dados informados: $error',
+      //         ),
+      //         actions: [
+      //           TextButton(
+      //             onPressed: () {
+      //               Navigator.pop(context);
+      //             },
+      //             child: const Text('OK'),
+      //           ),
+      //         ],
+      //       );
+      //     },
+      //   );
+      // }
     }
   }
 }
