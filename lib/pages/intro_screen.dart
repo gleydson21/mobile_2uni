@@ -8,7 +8,7 @@ class IntroScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[50],
+      backgroundColor: const Color.fromARGB(248, 227, 232, 253),
       body: SafeArea(
         child: Column(
           children: [
@@ -27,14 +27,14 @@ class IntroScreen extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(28.0),
               child: Text(
-                'Entregamos o seu pedido em sua porta',
+                'Faça o seu pedido!!',
                 textAlign: TextAlign.center,
                 style:
-                    GoogleFonts.notoSerif(fontSize: 36, fontWeight: FontWeight.bold),
+                    GoogleFonts.notoSerif(fontSize: 27, fontWeight: FontWeight.bold),
               ),
             ),
             Text(
-              'O sua loja de bebidas na palma de suas mãos',
+              'A sua loja de bebidas na palma de suas mãos',
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 16,
@@ -51,14 +51,14 @@ class IntroScreen extends StatelessWidget {
               onTap: () {
                 Navigator.pushReplacement(
                   context,
-                  MaterialPageRoute(builder: (context) =>  LoginScreen()),
+                  MaterialPageRoute(builder: (context) => LoginScreen()),
                 );
               },
               child: Container(
                 padding: const EdgeInsets.all(24),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(16),
-                  color: const Color.fromARGB(255, 112, 91, 222),
+                  color: const Color.fromARGB(223, 115, 222, 91),
                 ),
                 child: const Text(
                   "Vamos Começar?",

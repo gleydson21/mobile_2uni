@@ -1,4 +1,5 @@
- import 'package:flutter/material.dart';
+ import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
 // import 'package:firebase_auth/firebase_auth.dart';
 
 class PasswordRecoveryScreen extends StatefulWidget {
@@ -18,7 +19,7 @@ class _PasswordRecoveryScreenState extends State<PasswordRecoveryScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Recuperação de senha'),
+        title: const Text('Recuperar de senha'),
       ),
       body: Builder(
         builder: (BuildContext context) {
@@ -60,9 +61,9 @@ class _PasswordRecoveryScreenState extends State<PasswordRecoveryScreen> {
     });
 
     try {
-      // await FirebaseAuth.instance.sendPasswordResetEmail(email: email);
+         await FirebaseAuth.instance.sendPasswordResetEmail(email: email);
 
-      // Email de recuperação enviado com sucesso
+      //   Email de recuperação enviado com sucesso
       showDialog(
         // ignore: use_build_context_synchronously
         context: _scaffoldContext,

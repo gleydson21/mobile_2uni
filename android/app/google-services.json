@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "107791955698",
+    "project_id": "mobile2unid",
+    "storage_bucket": "mobile2unid.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:107791955698:android:a20f14e7cc8643e7c8826b",
+        "android_client_info": {
+          "package_name": "com.example.ecommerce"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC4q_C2rfArBWkG22IzSztAG1OpZnRDKpE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,64 @@
+📁 lib/
+  └─ 📁 authentication/
+        ├─ 🔒 authentication.dart
+        └─ 🔑 passwordrecovery_screen.dart
+        
+  └─ 📁 components/
+        └─ 🛒 ecommerce_items.dart
+       
+  └─ 📁 images/
+        ├─ 🖼️ colônia.png
+        └─ 🖼️ festy.png
+
+  └─ 📁 model/
+        └─ 🛒 cart_model.dart
+       
+  └─ 📁 pages/
+        ├─ 🛒 cart_page.dart
+        ├─ 🏠 homepage.dart
+        ├─ 🎬 intro_screen.dart
+        ├─ 🔒 login_screen.dart
+        └─ 📝 registration_screen.dart
+
+📄 backend_service.dart
+📄 firebase_options.dart
+📄 main.dart
+
+
+=======================================MANUAL DA APLICAÇÃO=============================================
+PROJETO MOBILE DA SEGUNDA UNIDADE
+PROFESSOR: SEVERINO
+DESENVOLVEDORES: GLEYDSON DIAS, MOISÉS JUNIOR, RODRIGO LELLIS, MÁRCIO BRITO, MARCELO GOMES, JOSÉ NETO
+
+
+
+1. Configuração do Firebase:
+   - Verifique o arquivo `firebase_options.dart` para garantir que as configurações do Firebase estão corretas.
+   - Certifique-se de que a biblioteca Firebase está importada corretamente no arquivo `backend_service.dart`.
+   - O arquivo `backend_service.dart` provavelmente contém a lógica de integração com o Firebase para a autenticação e outras funcionalidades relacionadas.
+
+2. Autenticação:
+   - O diretório `authentication` contém os arquivos relacionados à autenticação da aplicação.
+   - O arquivo `authentication.dart` pode conter a lógica para autenticação e registro de usuários.
+   - O arquivo `passwordrecovery_screen.dart` pode ser responsável por fornecer uma tela para permitir que os usuários recuperem suas senhas.
+
+3. Componentes:
+   - O diretório `components` contém o arquivo `ecommerce_items.dart`.
+   - Esse arquivo provavelmente contém componentes reutilizáveis ​​que são usados em várias partes da aplicação.
+
+4. Imagens:
+   - O diretório `images` contém os arquivos de imagem `colônia.png` e `festy.png`.
+   - Esses arquivos de imagem podem ser usados para exibir imagens na interface do usuário.
+
+5. Modelo de carrinho:
+   - O diretório `model` contém o arquivo `cart_model.dart`.
+   - Este arquivo provavelmente define o modelo para gerenciar o estado do carrinho de compras na aplicação.
+
+6. Páginas:
+   - O diretório `pages` contém vários arquivos de páginas da aplicação.
+   - O arquivo `cart_page.dart` pode ser a página que exibe o carrinho de compras.
+   - O arquivo `homepage.dart` provavelmente contém a página principal da aplicação.
+   - O arquivo `intro_screen.dart` pode ser responsável pela tela de introdução do aplicativo.
+   - O arquivo `login_screen.dart` pode ser usado para exibir a tela de login.
+   - O arquivo `registration_screen.dart` pode ser usado para exibir a tela de registro.
+

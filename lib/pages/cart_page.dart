@@ -1,11 +1,11 @@
+import 'package:ecommerce/backend_service.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-
 import '../model/cart_model.dart';
 
 class CartPage extends StatelessWidget {
-  const CartPage({super.key});
+  const CartPage({Key? key});
 
   @override
   Widget build(BuildContext context) {
@@ -32,20 +32,20 @@ class CartPage extends StatelessWidget {
                   ),
                 ),
               ),
-
               Expanded(
                 child: Padding(
                   padding: const EdgeInsets.all(12.0),
                   child: ListView.builder(
                     itemCount: value.cartItems.length,
-                    padding: const EdgeInsets.all(12),
+                    padding: const EdgeInsets.all(12.0),
                     itemBuilder: (context, index) {
                       return Padding(
                         padding: const EdgeInsets.all(12.0),
                         child: Container(
                           decoration: BoxDecoration(
-                              color: Colors.grey[200],
-                              borderRadius: BorderRadius.circular(8)),
+                            color: Colors.grey[200],
+                            borderRadius: BorderRadius.circular(8),
+                          ),
                           child: ListTile(
                             leading: Image.asset(
                               value.cartItems[index][2],
@@ -56,8 +56,7 @@ class CartPage extends StatelessWidget {
                               style: const TextStyle(fontSize: 18),
                             ),
                             subtitle: Text(
-                              // ignore: prefer_interpolation_to_compose_strings
-                              '\$' + value.cartItems[index][1],
+                              '\$${value.cartItems[index][1]}',
                               style: const TextStyle(fontSize: 12),
                             ),
                             trailing: IconButton(
@@ -73,9 +72,7 @@ class CartPage extends StatelessWidget {
                   ),
                 ),
               ),
-
               // total amount + pay now
-
               Padding(
                 padding: const EdgeInsets.all(36.0),
                 child: Container(
@@ -90,11 +87,10 @@ class CartPage extends StatelessWidget {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
+                          const Text(
                             'Preço Total',
-                            style: TextStyle(color: Colors.green[200]),
+                            style: TextStyle(color: Colors.green),
                           ),
-
                           const SizedBox(height: 8),
                           // total price
                           Text(
@@ -107,32 +103,62 @@ class CartPage extends StatelessWidget {
                           ),
                         ],
                       ),
+                      GestureDetector(
+                        onTap: () {
+                          final cartItems = value.cartItems.map<Map<String, dynamic>>((item) => {
+                            'item': item[0],  // Nome da chave corrigido
+                            'preco': item[1],  // Nome da chave corrigido
+                            'imagem': item[2]  // Nome da chave corrigido
+                          }).toList();
 
-                      // pay now
-                      Container(
-                        decoration: BoxDecoration(
-                          border: Border.all(color: Colors.green.shade200),
-                          borderRadius: BorderRadius.circular(28),
-                        ),
-                        padding: const EdgeInsets.all(12),
-                        child: const Row(
-                          children: [
-                            Text(
-                              'Pague Agora',
-                              style: TextStyle(color: Colors.white),
-                            ),
-                            Icon(
-                              Icons.arrow_forward_ios,
-                              size: 16,
-                              color: Colors.white,
-                            ),
-                          ],
+                          BackendService.addVendas(cartItems.cast<Map<String, dynamic>>())
+                              .then((success) {
+                            if (success) {
+                              // Tratar sucesso do pagamento
+                              ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                                content: Text('Compra efetuada com sucesso!'),
+                                duration: Duration(seconds: 2),
+                              ));
+                            } else {
+                              // Tratar falha no pagamento
+                              ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                                content: Text('Falha ao efetuar a compra. Por favor, tente novamente.'),
+                                duration: Duration(seconds: 2),
+                              ));
+                            }
+                          }).catchError((error) {
+                            // Tratar erro de pagamento
+                            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                              content: Text('Erro ao efetuar a compra: $error'),
+                              duration: const Duration(seconds: 2),
+                            ));
+                          });
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(
+                            border: Border.all(color: Colors.green.shade200),
+                            borderRadius: BorderRadius.circular(28),
+                          ),
+                          padding: const EdgeInsets.all(12),
+                          child: const Row(
+                            children: [
+                              Text(
+                                'Pague Agora',
+                                style: TextStyle(color: Colors.white),
+                              ),
+                              Icon(
+                                Icons.arrow_forward_ios,
+                                size: 16,
+                                color: Colors.white,
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ],
                   ),
                 ),
-              )
+              ),
             ],
           );
         },
