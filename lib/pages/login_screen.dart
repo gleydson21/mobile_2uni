@@ -1,5 +1,5 @@
-import 'package:ecommerce/authentication/passwordrecovery_screen.dart';
-import 'package:ecommerce/pages/home_page.dart';
+import 'package:ecommerce/pages/password_recovery_screen.dart';
+import 'package:ecommerce/pages/home_page_screen.dart';
 import 'package:ecommerce/pages/registration_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';

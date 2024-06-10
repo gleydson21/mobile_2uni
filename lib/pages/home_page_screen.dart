@@ -4,7 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:ecommerce/components/ecommerce_items.dart';
 import 'package:ecommerce/model/cart_model.dart';
-import 'package:ecommerce/pages/cart_page.dart';
+import 'package:ecommerce/pages/cart_page_screen.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key});

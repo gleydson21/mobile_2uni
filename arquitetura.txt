@@ -1,64 +1,124 @@
+📁 back_end/
+ | └─ 📁 instance/
+ |       └─vendas.db
+ | └─ 📁 venv/
+ |     |  └─📁 include/
+ |     |  └─📁 lib/
+ |     |  └─📁 Scripts/
+ |     └─📄 pyvenv.cfg 
+ |     
+📄 app.py
+📄 requierements.txt 
+
 📁 lib/
-  └─ 📁 authentication/
-        ├─ 🔒 authentication.dart
-        └─ 🔑 passwordrecovery_screen.dart
-        
-  └─ 📁 components/
-        └─ 🛒 ecommerce_items.dart
-       
-  └─ 📁 images/
-        ├─ 🖼️ colônia.png
-        └─ 🖼️ festy.png
-
-  └─ 📁 model/
-        └─ 🛒 cart_model.dart
-       
-  └─ 📁 pages/
-        ├─ 🛒 cart_page.dart
-        ├─ 🏠 homepage.dart
-        ├─ 🎬 intro_screen.dart
-        ├─ 🔒 login_screen.dart
-        └─ 📝 registration_screen.dart
-
+ |  └─ 📁 authentication/
+ |        └─🔒 authentication.dart
+ |        
+ |        
+ |  └─ 📁 components/
+ |        └─ 🛒 ecommerce_items.dart
+ |       
+ |  └─ 📁 images/
+ |        ├─ 🖼️ colônia.png
+ |        └─ 🖼️ festy.png
+ |
+ |  └─ 📁 model/
+ |        └─ 🛒 cart_model.dart
+ |       
+ |  └─ 📁 pages/
+ |        ├─ 🛒 cart_page_screen.dart
+ |        ├─ 🏠 home_page_screen.dart
+ |        ├─ 🎬 intro_screen.dart
+ |        ├─ 🔒 login_screen.dart
+ |        └─ 📝 registration_screen.dart
+ |        └─ 🔑 password_recovery_screen.dart
+ |
 📄 backend_service.dart
 📄 firebase_options.dart
 📄 main.dart
 
 
-=======================================MANUAL DA APLICAÇÃO=============================================
+========================MANUAL Da APLICAÇÃO======================
 PROJETO MOBILE DA SEGUNDA UNIDADE
-PROFESSOR: SEVERINO
+PROFESSOR: SEVERINO;
+DISCIPLINA: MOBILE;
+DESAFIO: CONSTRUÇÃO DE UM SISTEMA WEB COMPOSTO POR:
+UMA API REST COMO BACKEND, FORNECENDO E PROCESSANDO DADOS E O MODELO DE NEGÓCIO;
+CLIENTE MOBILE COMO INTERFACE GRÁFICA (front FLUTTER);
+
 DESENVOLVEDORES: GLEYDSON DIAS, MOISÉS JUNIOR, RODRIGO LELLIS, MÁRCIO BRITO, MARCELO GOMES, JOSÉ NETO
 
 
+Flutter: 
 
 1. Configuração do Firebase:
    - Verifique o arquivo `firebase_options.dart` para garantir que as configurações do Firebase estão corretas.
    - Certifique-se de que a biblioteca Firebase está importada corretamente no arquivo `backend_service.dart`.
-   - O arquivo `backend_service.dart` provavelmente contém a lógica de integração com o Firebase para a autenticação e outras funcionalidades relacionadas.
+   - O arquivo `backend_service.dart` contém a lógica de integração com o Firebase para a autenticação e outras funcionalidades relacionadas.
 
 2. Autenticação:
    - O diretório `authentication` contém os arquivos relacionados à autenticação da aplicação.
-   - O arquivo `authentication.dart` pode conter a lógica para autenticação e registro de usuários.
-   - O arquivo `passwordrecovery_screen.dart` pode ser responsável por fornecer uma tela para permitir que os usuários recuperem suas senhas.
-
+   - O arquivo `authentication.dart` contém a lógica para autenticação e registro de usuários.
+   
 3. Componentes:
    - O diretório `components` contém o arquivo `ecommerce_items.dart`.
-   - Esse arquivo provavelmente contém componentes reutilizáveis ​​que são usados em várias partes da aplicação.
+   - Esse arquivo contém componentes reutilizáveis ​​que são usados em várias partes da aplicação.
 
 4. Imagens:
    - O diretório `images` contém os arquivos de imagem `colônia.png` e `festy.png`.
-   - Esses arquivos de imagem podem ser usados para exibir imagens na interface do usuário.
+   - Esses arquivos de imagem  serão usados para exibir imagens na interface do usuário.
 
 5. Modelo de carrinho:
    - O diretório `model` contém o arquivo `cart_model.dart`.
-   - Este arquivo provavelmente define o modelo para gerenciar o estado do carrinho de compras na aplicação.
+   - Este arquivo define o modelo para gerenciar o estado do carrinho de compras na aplicação.
 
 6. Páginas:
    - O diretório `pages` contém vários arquivos de páginas da aplicação.
    - O arquivo `cart_page.dart` pode ser a página que exibe o carrinho de compras.
-   - O arquivo `homepage.dart` provavelmente contém a página principal da aplicação.
-   - O arquivo `intro_screen.dart` pode ser responsável pela tela de introdução do aplicativo.
-   - O arquivo `login_screen.dart` pode ser usado para exibir a tela de login.
+   - O arquivo `home_page_screen.dart`  contém a página principal da aplicação.
+   - O arquivo `intro_screen.dart` é responsável pela tela de introdução do aplicativo.
+   - O arquivo `login_screen.dart` é usado para exibir a tela de login.
    - O arquivo `registration_screen.dart` pode ser usado para exibir a tela de registro.
+
+   - O arquivo `passwordrecovery_screen.dart` é responsável por fornecer uma tela para permitir que os usuários recuperem suas senhas.
+dependências utilizadas nesse projeto:
+
+dependências do projeto
+
+1. `cupertino_icons: ^1.0.6`: Essa dependência adiciona os ícones do estilo Cupertino, que são os ícones usados na interface de usuário do iOS. Ela fornece acesso à classe `CupertinoIcons`, que contém os ícones específicos do iOS.
+
+2. `provider: ^6.1.2`: Esta é uma biblioteca popular do Flutter que oferece recursos avançados de gerenciamento de estado. Ela permite a fácil implementação do padrão State Management e ajuda a garantir a separação clara entre a lógica e a interface do usuário.
+
+3. `google_fonts: ^6.2.1`: Com essa dependência, você obtém acesso a uma grande variedade de fontes personalizadas do Google Fonts. Ela oferece uma maneira fácil de usar essas fontes em seu aplicativo Flutter, permitindo que você defina a família de fonte e seus estilos diretamente no código.
+
+4. `logging: ^1.0.2`: Essa dependência oferece recursos de log para ajudar no desenvolvimento e depuração do aplicativo. Ela fornece várias classes e utilitários para registrar informações, avisos e erros no console.
+
+5. `firebase_core: ^3.0.0`: Essa dependência é necessária para a integração com o Firebase. Ela fornece as funcionalidades básicas e a configuração necessária para inicializar o Firebase no seu aplicativo Flutter.
+
+6. `firebase_auth: ^5.0.0`: Com essa dependência, você pode usar recursos de autenticação do Firebase, como autenticação por e-mail, autenticação com provedores de terceiros (Google, Facebook, etc.) e gerenciamento de usuários.
+
+7. `http: ^1.2.1`: Essa dependência fornece uma maneira fácil de fazer requisições HTTP em seu aplicativo Flutter. Ela oferece uma API simples e poderosa para enviar e receber dados de APIs RESTful ou outros serviços web.
+
+
+Python:
+Claro! Vou dar uma breve explicação do código fornecido.
+
+1. Importações: O código começa importando os módulos necessários, como o `os` para lidar com caminhos de arquivo e o `Flask` para criar a aplicação Flask. Também são importados o `jsonify` para criar respostas JSON, o `request` para lidar com as solicitações recebidas e o `SQLAlchemy` para fazer a comunicação com o banco de dados.
+
+2. Configuração da aplicação e do banco de dados: A configuração da aplicação Flask é definida usando o objeto `app.config`. Aqui, definimos a URI do banco de dados SQLite e desabilitamos o controle de modificações do SQLAlchemy para evitar avisos.
+
+3. Definição do modelo: É definida uma classe `Venda` que herda de `db.Model` (que é uma classe de modelo fornecida pelo SQLAlchemy). A classe possui alguns campos no banco de dados, como o `id` (chave primária), `item`, `preco` e `imagem`.
+
+4. Criação do banco de dados e tabelas: O bloco `with app.app_context()` é usado para criar todas as tabelas definidas nos modelos. A função `db.create_all()` é usada para criar o banco de dados e as tabelas, caso ainda não existam.
+
+5. Rota para receber vendas: A função `receber_venda` é decorada com `@app.route('/api/vendas', methods=['POST'])` para criar uma rota que aceita solicitações POST na URL '/api/vendas'. A função obtém os dados JSON da solicitação, valida se estão completos e, em seguida, itera sobre os dados das vendas para criar novas instâncias da classe `Venda`. Em seguida, as novas vendas são adicionadas à sessão do banco de dados e o banco de dados é atualizado com `db.session.commit()`.
+
+6. Rota de índice: A função `index` é decorada com `@app.route('/', methods=['GET'])` para criar uma rota inicial na raiz do aplicativo Flask. Quando um cliente faz uma solicitação GET para a raiz do aplicativo, a mensagem "Bem-vindo à minha API Flask!" é retornada.
+
+7. Rota para obter itens: A função `get_items` é decorada com `@app.route('/api/items', methods=['GET'])` para criar uma rota que retorna uma resposta JSON com uma lista de itens. Neste exemplo, apenas uma lista estática de itens é retornada.
+
+8. Execução do aplicativo: Por último, a condição `if __name__ == '__main__':` é usada para garantir que o aplicativo seja executado somente se for o arquivo principal que está sendo executado. O aplicativo Flask é executado com a função `app.run()`.
+
+Em resumo, este é um exemplo básico de uma aplicação Flask. Ele configura um banco de dados SQLite, define um modelo de venda, define rotas para receber vendas, obter itens e exibe uma mensagem de boas-vindas na raiz do aplicativo.
+
 
