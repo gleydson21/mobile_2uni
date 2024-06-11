@@ -7,8 +7,8 @@ class IntroScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: const Color.fromARGB(248, 227, 232, 253),
+    return  Scaffold(
+      backgroundColor: Colors.black,
       body: SafeArea(
         child: Column(
           children: [
